@@ -24,6 +24,10 @@ export const Page: React.FC = () => {
     <article>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <input {...methods.register('ネスト.中黒・あり')} />
+
+        {methods.formState.errors.ネスト?.中黒・あり && (
+          <span style={{ color: 'red' }}>{methods.formState.errors.ネスト?.中黒・あり.message}</span>
+        )}
       </form>
     </article>
   );
